@@ -1,9 +1,9 @@
- const Usercard = ()=> {
+ const Usercard = ({Email , Name})=> {
 
   return <div>
 
-<h2>User Name : </h2>
-<p>Email : </p>
+<h2>Email: {Email} </h2>
+<p>Name: {Name}</p>
 
   </div>
 
