@@ -1,35 +1,25 @@
-import Usercard from "./Usercard";
+import {useState} from "react";
 
 function App (){
 
-  return (
-    <div>
+const [isOn, setOn] = useState(true)
 
-      <Usercard 
-      
-      Email="nadaara5538@gmail.com" 
-      Name="Ayuub Nadaara"
-      
-      />
+function toggleBtn (){
 
-      <Usercard 
-      
-      Email="yaya22@gmail.com" 
-      Name="yaxye"
-      
-      />
+  setOn(!isOn)
+  
 
-      <Usercard 
-      
-      Email="ciise22@gmail.com" 
-      Name="ciise"
-      
-      />
-      
-   
-    </div>
-  )
 }
 
-export default App;
+return (
+  <>
+  <p>{isOn ? "the button is on" : "the button is off"}</p>
+  <button onClick={toggleBtn}> turn {isOn ? "of" : "on"} </button>
+  
+  
+  </>
+)
+}
+
+export default App; 
 
