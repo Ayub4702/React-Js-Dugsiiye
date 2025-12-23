@@ -1,15 +1,14 @@
-// import ToggleBtn from "./ToggleBtn";
-// import TodoList from "./TodoList"; 
+ 
 import ShoppingCart from "./ShoppingCart"
+import UseEffecr from "./UseEffecr"
 
 function App (){
 
 return (
   <>
   
-  {/* <ToggleBtn/>
-  <TodoList/> */}
   <ShoppingCart/>
+  <UseEffecr/>
   
   </>
 )

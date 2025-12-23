@@ -23,6 +23,8 @@ const ShoppingCart = () => {
   const removeProduct = (id) => {
     const updatedProducts = products.filter((product) => product.id !== id);
     setProducts(updatedProducts);
+    
+    
   };
 
   const increaseQuantity = (id) => {
@@ -30,6 +32,7 @@ const ShoppingCart = () => {
       product.id === id
         ? { ...product, quantity: product.quantity + 1 }
         : product
+        
     );
 
     setProducts(updatedProduct);
