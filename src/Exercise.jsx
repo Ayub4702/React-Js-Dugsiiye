@@ -11,8 +11,8 @@ function MyWindow() {
       });
     };
 
-    document.addEventListener("mousemove", sizeHandle), [];
-  });
+    document.addEventListener("mousemove", sizeHandle);
+  },[]);
 
   return (
     <div>
