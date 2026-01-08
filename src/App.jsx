@@ -6,6 +6,7 @@
 // import PokemanApi from "./PokemanApi"
 // import Usercard from "./Usercard"
 import UserList from "./UserList"
+import LoginForm from "./LoginForm";
 
 function App (){
 
@@ -23,6 +24,7 @@ return (
   <PokemanApi/>
   // <Usercard/> */}
   <UserList users={users}/>  
+  <LoginForm/>
 
   </>
 )
