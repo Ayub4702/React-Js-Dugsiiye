@@ -8,6 +8,7 @@
 import UserList from "./UserList"
 import LoginForm from "./LoginForm";
 import Button from "./Button"
+import CounterWithReducer from "./CounterWithReducer";
 
 function App (){
 
@@ -27,6 +28,7 @@ return (
   <UserList users={users}/>  
   <LoginForm/>
   <Button/>
+  <CounterWithReducer/>
 
   </>
 )
