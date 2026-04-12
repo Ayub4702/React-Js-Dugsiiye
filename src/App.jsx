@@ -1,39 +1,19 @@
- 
-// import ShoppingCart from "./ShoppingCart"
-// import UseEffecr from "./UseEffecr"
-// import Exercise from "./Exercise"
-// import TimerUseEffects from "./TimerUseEffect"
-// import PokemanApi from "./PokemanApi"
-// import Usercard from "./Usercard"
-import UserList from "./UserList"
-import LoginForm from "./LoginForm";
-import Button from "./Button"
-import CounterWithReducer from "./CounterWithReducer";
+import TodoApp from "./TodoApp";
+// import AddToCart from "./AddToCart";
+// import Loging from "./Loging";
+// import CounterWithReducer from "./CounterWithReducer";
+// import ShoppingCart from "./Carts";
+// import MyCart from "./MyCart";cdclear
+import MultiStepsForm from "./MultiStepsForm";
 
-function App (){
-
-  const users = [
-    {id: 1, name: "Ayuub", email: "nadaara5538@5a5.com"},
-    {id: 12, name: "yuusuf", email: "yuusufra58@5a5.com"}
-  ]
-return (
-  <>
-  
-  {/* <ShoppingCart/>
-  <UseEffecr/>
-  <Exercise/>
-  <TimerUseEffects/>
-  <PokemanApi/>
-  // <Usercard/> */}
-  <UserList users={users}/>  
-  <LoginForm/>
-  <Button/>
-  <CounterWithReducer/>
-
-  </>
-)
-
+function App() {
+  return (
+    <>
+      <MultiStepsForm/>
+      {/* <TodoApp/> */}
+      {/* <MyCart /> */}
+    </>
+  );
 }
 
-export default App; 
-
+export default App;
