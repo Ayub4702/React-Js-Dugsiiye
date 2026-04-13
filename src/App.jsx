@@ -1,19 +1,19 @@
-import TodoApp from "./TodoApp";
-// import AddToCart from "./AddToCart";
-// import Loging from "./Loging";
-// import CounterWithReducer from "./CounterWithReducer";
-// import ShoppingCart from "./Carts";
-// import MyCart from "./MyCart";cdclear
-import MultiStepsForm from "./MultiStepsForm";
+import ContextLanguage from "./ContextLanguage";
+import ContextLg from "./ContextLg";
+import { useState } from "react";
 
 function App() {
+
+  const [lg, setLg] = useState("")
+  
   return (
-    <>
-      <MultiStepsForm/>
-      {/* <TodoApp/> */}
-      {/* <MyCart /> */}
-    </>
-  );
+    <ContextLanguage.Provider value={{lg, setLg }}>
+      
+      <ContextLg/>
+      
+    </ContextLanguage.Provider>
+  )
+
 }
 
 export default App;
