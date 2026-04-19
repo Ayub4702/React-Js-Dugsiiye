@@ -1,19 +1,17 @@
-import ContextLanguage from "./ContextLanguage";
-import ContextLg from "./ContextLg";
 import { useState } from "react";
+import ContextCarWidgetGidget from "./ContextCarWidgetGidget";
+import WidgetGidget from "./WidgetGidget";
+import Total from "./Total";
 
 function App() {
+  const [cart, setCart] = useState([]);
 
-  const [lg, setLg] = useState("")
-  
   return (
-    <ContextLanguage.Provider value={{lg, setLg }}>
-      
-      <ContextLg/>
-      
-    </ContextLanguage.Provider>
-  )
-
+    <ContextCarWidgetGidget.Provider value={{ cart, setCart }}>
+      <WidgetGidget />
+      <Total />
+    </ContextCarWidgetGidget.Provider>
+  );
 }
 
 export default App;
