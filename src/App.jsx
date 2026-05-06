@@ -1,17 +1,15 @@
+import FormContext from "./FormContext";
+import ContactForm from "./ContactForm";
 import { useState } from "react";
-import ContextCarWidgetGidget from "./ContextCarWidgetGidget";
-import WidgetGidget from "./WidgetGidget";
-import Total from "./Total";
 
-function App() {
-  const [cart, setCart] = useState([]);
+const App = () => {
+  const [valueInfo, setValueInfo] = useState({name: '', email: ''});
 
-  return (
-    <ContextCarWidgetGidget.Provider value={{ cart, setCart }}>
-      <WidgetGidget />
-      <Total />
-    </ContextCarWidgetGidget.Provider>
+  return ( 
+    <FormContext.Provider value={{ valueInfo, setValueInfo }}>
+      <ContactForm />
+    </FormContext.Provider>
   );
-}
+};
 
 export default App;
