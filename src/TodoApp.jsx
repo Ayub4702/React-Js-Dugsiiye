@@ -1,4 +1,5 @@
 import { useReducer, useState } from "react";
+import styles from "./TodoApp.module.css";
 
 const initial = [];
 
@@ -41,27 +42,36 @@ const TodoApp = () => {
     }
   };
   return (
-    <div>
-      <h2>hello</h2>
+    <div className={styles.todoAppContainer}>
+      <h2 className={styles.myTodoList}>My Todo List</h2>
+
+      <div>
+
       <input
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="enter a new todo"
+        className={styles.InputTodo}
       />
 
-      <button onClick={handleAdd}>Add</button>
+      <button onClick={handleAdd} className={styles.todoBtn}>Add</button>
 
-      <ul>
+      </div>
+
+      <ul className={styles.ulTodo}>
         {state.map((todo) => (
-          <li key={todo.id}>
-            <span
+          <li key={todo.id} className={styles.liTodo}>
+            <span 
+            className={styles.spanTodo}
               style={{ textDecoration: todo.complete ? "line-throug" : "none" }}
               onClick={() => dispatch({ type: "toggle", playload: todo.id })}
             >
               {todo.text}
+              
             </span>
             <button
+            className={styles.btnDelete}
               onClick={() => dispatch({ type: "delete", playload: todo.id })}
             >
               Delete

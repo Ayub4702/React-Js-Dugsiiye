@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { ContactProvider, useContact } from "./ContextContact";
+import TodoList from './TodoList';
+import TodoApp from './TodoApp';
 
 function Contact() {
   const { state, dispatch } = useContact();
@@ -63,8 +65,19 @@ function Contact() {
 
 export default function App() {
   return (
-    <ContactProvider>
-      <Contact />
-    </ContactProvider>
+
+    <div>
+
+   {/* <TodoList/> */}
+    <TodoApp/>
+
+    </div>
+    // <ContactProvider>
+    //   <Contact />
+      
+    // </ContactProvider>
+
+    
+   
   );
 }
