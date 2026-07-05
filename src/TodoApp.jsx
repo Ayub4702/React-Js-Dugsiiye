@@ -1,5 +1,4 @@
 import { useReducer, useState } from "react";
-import styles from "./TodoApp.module.css";
 
 const initial = [];
 
@@ -42,44 +41,48 @@ const TodoApp = () => {
     }
   };
   return (
-    <div className={styles.todoAppContainer}>
-      <h2 className={styles.myTodoList}>My Todo List</h2>
+   <div className="min-h-screen bg-gray-50 py-10">
+  <div className="m-10 flex justify-center gap-4">
+    <input
+      type="text"
+      value={text}
+      onChange={(e) => setText(e.target.value)}
+      placeholder="enter a new todo"
+      className="bg-white p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400 w-64"
+    />
 
-      <div>
+    <button
+      onClick={handleAdd}
+      className="bg-pink-400 hover:bg-pink-500 text-white w-20 h-10 rounded-lg font-medium transition-colors"
+    >
+      Add
+    </button>
+  </div>
 
-      <input
-        type="text"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        placeholder="enter a new todo"
-        className={styles.InputTodo}
-      />
-
-      <button onClick={handleAdd} className={styles.todoBtn}>Add</button>
-
-      </div>
-
-      <ul className={styles.ulTodo}>
-        {state.map((todo) => (
-          <li key={todo.id} className={styles.liTodo}>
-            <span 
-            className={styles.spanTodo}
-              style={{ textDecoration: todo.complete ? "line-throug" : "none" }}
-              onClick={() => dispatch({ type: "toggle", playload: todo.id })}
-            >
-              {todo.text}
-              
-            </span>
-            <button
-            className={styles.btnDelete}
-              onClick={() => dispatch({ type: "delete", playload: todo.id })}
-            >
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
+  <ul className="flex flex-col items-center gap-3 max-w-md mx-auto">
+    {state.map((todo) => (
+      <li
+        key={todo.id}
+        className="flex justify-between items-center w-full bg-white p-3 rounded-lg shadow-sm"
+      >
+        <span
+          className={`cursor-pointer select-none ${
+            todo.complete ? "line-through text-gray-400" : "text-gray-800"
+          }`}
+          onClick={() => dispatch({ type: "toggle", playload: todo.id })}
+        >
+          {todo.text}
+        </span>
+        <button
+          className="text-red-400 hover:text-red-600 text-sm font-medium transition-colors"
+          onClick={() => dispatch({ type: "delete", playload: todo.id })}
+        >
+          Delete
+        </button>
+      </li>
+    ))}
+  </ul>
+</div>
   );
 };
 
